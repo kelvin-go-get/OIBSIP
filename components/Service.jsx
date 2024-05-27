@@ -1,3 +1,4 @@
+//displays the services offered by the application
 import Image from "next/image";
 import css from "../styles/Services.module.css";
 import s1 from "../assets/s1.png";

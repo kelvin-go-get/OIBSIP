@@ -1,3 +1,4 @@
+//renders menu section for the webpage
 import Image from "next/image";
 import css from "../styles/Menu.module.css";
 import { urlFor } from "../lib/client";

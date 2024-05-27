@@ -1,3 +1,4 @@
+//renders header section for the webpage
 import css from "../styles/Header.module.css";
 import Image from "next/image";
 import Logo from "../assets/Logo.png";

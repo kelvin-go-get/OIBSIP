@@ -1,3 +1,4 @@
+//renders layout section for the webpage
 import Header from "./Header"
 import Footer from "./Footer"
 
