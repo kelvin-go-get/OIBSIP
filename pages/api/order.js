@@ -1,3 +1,7 @@
+/*
+ * Handles HTTP requests, (POST) - to create new orders in a database
+ * and responds accordingly (success or failure) of the operation
+*/
 import client  from "../../lib/client";
 
 export default async function handler(req, res) {

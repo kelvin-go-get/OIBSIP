@@ -1,3 +1,7 @@
+/*
+ * creates a checkout session with stripe for processing payments
+ * with the provided order details
+ */
 import Stripe from "stripe";
 
 const stripe = new Stripe(
