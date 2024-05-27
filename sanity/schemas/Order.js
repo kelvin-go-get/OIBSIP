@@ -1,3 +1,4 @@
+// Defines a schema for "Order" document with fields, types, and constraints.
 export default {
   name: 'order',
   title: 'Order',

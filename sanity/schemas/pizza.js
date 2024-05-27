@@ -1,3 +1,4 @@
+// Defines a schema for managing pizza related content.
 export default {
     name:'pizza',
     title:"pizza",
