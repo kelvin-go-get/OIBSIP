@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 /*
  * creates a checkout session with stripe for processing payments
  * with the provided order details
  */
->>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 import Stripe from "stripe";
 
 const stripe = new Stripe(
@@ -53,6 +50,6 @@ export default async function handler(req, res) {
     }
   } else {
     res.setHeader("Allow", "POST");
-    res.status(405).end("method not allowed")
+    res.status(405).end("method not allowed");
   }
 }

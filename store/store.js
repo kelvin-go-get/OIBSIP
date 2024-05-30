@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 //manages shopping cart; enables easy add and remove or clear items from cart
->>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 import create from "zustand";
 
 export const useStore = create((set) => ({
@@ -25,10 +22,10 @@ export const useStore = create((set) => ({
         pizzas: state.cart.pizzas.filter((_, i) => i !== index),
       },
     })),
-    resetCart: ()=> 
-    set(()=>({
+  resetCart: () =>
+    set(() => ({
       cart: {
-        pizzas: []
-      }
-    }))
+        pizzas: [],
+      },
+    })),
 }));

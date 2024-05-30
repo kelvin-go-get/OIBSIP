@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 //displays the services offered by the application
->>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 import Image from "next/image";
 import css from "../styles/Services.module.css";
 import s1 from "../assets/s1.png";

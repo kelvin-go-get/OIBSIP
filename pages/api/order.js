@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 /*
  * Handles HTTP requests, (POST) - to create new orders in a database
  * and responds accordingly (success or failure) of the operation
-*/
->>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
-import client  from "../../lib/client";
+ */
+import client from "../../lib/client";
 
 export default async function handler(req, res) {
   switch (req.method) {
