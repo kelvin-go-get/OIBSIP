@@ -20,33 +20,33 @@
   font-size: 2rem;
 }
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .pizza {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .ImageWrapper {
-    height: 16rem;
-    width: 22rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 2rem;
+  height: 16rem;
+  width: 22rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
 }
-.ImageWrapper>span>img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+.ImageWrapper > span > img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 .pizza:hover {
-    cursor: link;
+  cursor: link;
 }

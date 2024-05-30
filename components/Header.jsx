@@ -27,7 +27,9 @@ export default function Header() {
         <li>
           <Link href="../">Home</Link>
         </li>
-        <li>Menu</li>
+        <li>
+          <Link href="#Menu">Menu</Link>
+        </li>
         <li>Contact</li>
       </ul>
 

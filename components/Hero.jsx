@@ -4,6 +4,7 @@ import Cherry from "../assets/Cherry.png";
 import HeroImage from "../assets/HeroImage.png";
 import { UilPhone } from "@iconscout/react-unicons";
 import Pizza1 from "../assets/p1.jpg";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -28,7 +29,9 @@ export default function Hero() {
           and free delivery
         </span>
 
-        <button className={`btn ${css.btn}`}>Get Started</button>
+        <button className={`btn ${css.btn}`}>
+          <Link href="#Menu">Get Started</Link>
+        </button>
       </div>
       {/* right side */}
       <div className={css.right}>

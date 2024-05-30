@@ -4,9 +4,8 @@ import { urlFor } from "../lib/client";
 import Link from "next/link";
 
 export default function Menu({ pizzas }) {
-  
   return (
-    <div className={css.container}>
+    <div className={css.container} id="Menu">
       <div className={css.heading}>
         <span>OUR MENU</span>
         <span>Menu That Always</span>
@@ -19,20 +18,22 @@ export default function Menu({ pizzas }) {
           const src = urlFor(pizza.image).url();
           return (
             <div className={css.pizza} key={id}>
-
               <Link href={`./pizza/${pizza.slug.current}`}>
-              <div className={css.ImageWrapper}>
-                <Image
-                  loader={() => src}
-                  src={src}
-                  objectFit="cover"
-                  layout="fill"
-                  alt=""
-                />
-              </div>
+                <div className={css.ImageWrapper}>
+                  <Image
+                    loader={() => src}
+                    src={src}
+                    objectFit="cover"
+                    layout="fill"
+                    alt=""
+                  />
+                </div>
               </Link>
               <span>{pizza.name}</span>
-              <span><span style={{color:"var(--themeRed)"}}>$ </span> {pizza.price[1]}</span>
+              <span>
+                <span style={{ color: "var(--themeRed)" }}>$ </span>{" "}
+                {pizza.price[1]}
+              </span>
             </div>
           );
         })}

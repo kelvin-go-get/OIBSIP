@@ -6,7 +6,8 @@ import Cooking from "../../assets/cooking.png";
 import Onway from "../../assets/onway.png";
 import Image from "next/image";
 import Spinner from "../../assets/spinner.svg";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export const getServerSideProps = async ({ params }) => {
   const query = `*[_type == 'order' && _id == '${params.id}']`;
@@ -20,12 +21,44 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function Orders({ order }) {
+  const router = useRouter();
+  const [currentStatus, setCurrentStatus] = useState(order ? order.status : 0);
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  useEffect(()=>{
-    if(order.status > 3){
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!order || !isHydrated) return;
+
+    if (currentStatus > 3) {
       localStorage.clear();
+      router.push("/");
+      return;
     }
-  }, [order])
+
+    if (currentStatus < 4) {
+      const timer = setTimeout(
+        () => {
+          setCurrentStatus((prevStatus) => prevStatus + 1);
+        },
+        currentStatus === 0 ? 2000 : 7000
+      );
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentStatus, order, isHydrated, router]);
+
+  if (!isHydrated || !order) {
+    return (
+      <Layout>
+        <div className={css.container}>
+          <span className={css.heading}>Loading...</span>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -60,25 +93,14 @@ export default function Orders({ order }) {
 
         <div className={css.statusContainer}>
           <div className={css.status}>
-            <UilBill width={50} height={50} />
-            <span>Payment</span>
-            {order.method === 0 ? (
-              <span className={css.pending}>On Delivery</span>
-            ) : (
-              <span className={css.completed}>Completed</span>
-            )}
-          </div>
-
-          <div className={css.status}>
             <Image src={Cooking} alt="" width={50} height={50} />
-
             <span>Cooking</span>
-            {order.status === 1 && (
+            {currentStatus === 1 && (
               <div className={css.spinner}>
                 <Image src={Spinner} alt="" />
               </div>
             )}
-            {order.status > 1 && (
+            {currentStatus > 1 && (
               <span className={css.completed}>Completed</span>
             )}
           </div>
@@ -86,12 +108,12 @@ export default function Orders({ order }) {
           <div className={css.status}>
             <Image src={Onway} alt="" width={50} height={50} />
             <span>OnWay</span>
-            {order.status === 2 && (
+            {currentStatus === 2 && (
               <div className={css.spinner}>
                 <Image src={Spinner} alt="" />
               </div>
             )}
-            {order.status > 2 && (
+            {currentStatus > 2 && (
               <span className={css.completed}>Completed</span>
             )}
           </div>
@@ -99,12 +121,22 @@ export default function Orders({ order }) {
           <div className={css.status}>
             <UilBox width={50} height={50} />
             <span>Delivered</span>
-            {order.status === 3 && (
+            {currentStatus === 3 && (
               <div className={css.spinner}>
                 <Image src={Spinner} alt="" />
               </div>
             )}
-            {order.status > 3 && (
+            {currentStatus > 3 && (
+              <span className={css.completed}>Completed</span>
+            )}
+          </div>
+
+          <div className={css.status}>
+            <UilBill width={50} height={50} />
+            <span>Payment</span>
+            {order.method === 0 && currentStatus < 4 ? (
+              <span className={css.pending}>On Delivery</span>
+            ) : (
               <span className={css.completed}>Completed</span>
             )}
           </div>
