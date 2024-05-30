@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//renders modal form for placing orders in the web application
+>>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 import { Modal, useMantineTheme } from "@mantine/core";
 import css from "../styles/OrderModal.module.css";
 import { useRouter } from "next/router";

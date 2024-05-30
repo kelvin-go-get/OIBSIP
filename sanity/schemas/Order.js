@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// Defines a schema for "Order" document with fields, types, and constraints.
+>>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 export default {
   name: 'order',
   title: 'Order',

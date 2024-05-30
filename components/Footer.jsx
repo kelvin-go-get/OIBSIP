@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//renders footer section for the webpage
+>>>>>>> 11c8edc9dd8ac1a8163bec0d56faccd193272507
 import css from "../styles/Footer.module.css";
 import { UilTwitter, UilGithub, UilInstagram } from "@iconscout/react-unicons";
 import Image from "next/image";
